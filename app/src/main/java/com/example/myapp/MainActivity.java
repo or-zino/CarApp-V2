@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         bl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(GameView.car.getX() > Constants.SCREEN_WIDTH/3){
-            GameView.car.setX((GameView.car.getX())-(Constants.SCREEN_WIDTH/3));
+                if(GameView.car.getX() > Constants.SCREEN_WIDTH/8){
+                    GameView.car.setX((GameView.car.getX())-(Constants.SCREEN_WIDTH/6));
                 }
 
             }
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         br.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!(GameView.car.getX() > Constants.SCREEN_WIDTH/2)) {
-                    GameView.car.setX(((GameView.car.getX())) + (Constants.SCREEN_WIDTH / 3));
+                if(!(GameView.car.getX() > (Constants.SCREEN_WIDTH)-Constants.SCREEN_WIDTH/4)) {
+                    GameView.car.setX(((GameView.car.getX())) + (Constants.SCREEN_WIDTH / 6));
                 }
 
             }
