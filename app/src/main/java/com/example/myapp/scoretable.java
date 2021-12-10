@@ -46,57 +46,57 @@ public class scoretable extends AppCompatActivity {
         TextView km10 = (TextView) findViewById(R.id.km10);
 
 
-//
-//        if(MainActivity.index >= 1) {
-//            name1.setText(MainActivity.person[0].getName().toString());
-//            km1.setText(String.valueOf(MainActivity.person[0].getKm()));
-//            score1.setText(String.valueOf(MainActivity.person[0].getScore()));
-//        }
-//        if(MainActivity.index >= 2){
-//            name2.setText(MainActivity.person[1].getName().toString());
-//            km2.setText(String.valueOf(MainActivity.person[1].getKm()));
-//            score2.setText(String.valueOf(MainActivity.person[1].getScore()));
-//        }
-//        if(MainActivity.index >= 3){
-//            name3.setText(MainActivity.person[2].getName().toString());
-//            km3.setText(String.valueOf(MainActivity.person[2].getKm()));
-//            score3.setText(String.valueOf(MainActivity.person[2].getScore()));
-//        }
-//        if(MainActivity.index >= 4){
-//            name4.setText(MainActivity.person[3].getName().toString());
-//            km4.setText(String.valueOf(MainActivity.person[3].getKm()));
-//            score4.setText(String.valueOf(MainActivity.person[3].getScore()));
-//        }
-//        if(MainActivity.index >= 5){
-//            name5.setText(MainActivity.person[4].getName().toString());
-//            km5.setText(String.valueOf(MainActivity.person[4].getKm()));
-//            score5.setText(String.valueOf(MainActivity.person[4].getScore()));
-//        }
-//        if(MainActivity.index >= 6){
-//            name6.setText(MainActivity.person[5].getName().toString());
-//            km6.setText(String.valueOf(MainActivity.person[5].getKm()));
-//            score6.setText(String.valueOf(MainActivity.person[5].getScore()));
-//        }
-//        if(MainActivity.index >= 7){
-//            name7.setText(MainActivity.person[6].getName().toString());
-//            km7.setText(String.valueOf(MainActivity.person[6].getKm()));
-//            score7.setText(String.valueOf(MainActivity.person[6].getScore()));
-//        }
-//        if(MainActivity.index >= 8){
-//            name8.setText(MainActivity.person[7].getName().toString());
-//            km8.setText(String.valueOf(MainActivity.person[7].getKm()));
-//            score8.setText(String.valueOf(MainActivity.person[7].getScore()));
-//        }
-//        if(MainActivity.index >= 9){
-//            name9.setText(MainActivity.person[8].getName().toString());
-//            km9.setText(String.valueOf(MainActivity.person[8].getKm()));
-//            score9.setText(String.valueOf(MainActivity.person[8].getScore()));
-//        }
-//        if(MainActivity.index >= 10){
-//            name10.setText(MainActivity.person[9].getName().toString());
-//            km10.setText(String.valueOf(MainActivity.person[9].getKm()));
-//            score10.setText(String.valueOf(MainActivity.person[9].getScore()));
-//        }
+
+        if(MainActivity2.index >= 1) {
+            name1.setText(MainActivity2.person[0].getName().toString());
+            km1.setText(String.valueOf(MainActivity2.person[0].getKm()));
+            score1.setText(String.valueOf(MainActivity2.person[0].getScore()));
+        }
+        if(MainActivity2.index >= 2){
+            name2.setText(MainActivity2.person[1].getName().toString());
+            km2.setText(String.valueOf(MainActivity2.person[1].getKm()));
+            score2.setText(String.valueOf(MainActivity2.person[1].getScore()));
+        }
+        if(MainActivity2.index >= 3){
+            name3.setText(MainActivity2.person[2].getName().toString());
+            km3.setText(String.valueOf(MainActivity2.person[2].getKm()));
+            score3.setText(String.valueOf(MainActivity2.person[2].getScore()));
+        }
+        if(MainActivity2.index >= 4){
+            name4.setText(MainActivity2.person[3].getName().toString());
+            km4.setText(String.valueOf(MainActivity2.person[3].getKm()));
+            score4.setText(String.valueOf(MainActivity2.person[3].getScore()));
+        }
+        if(MainActivity2.index >= 5){
+            name5.setText(MainActivity2.person[4].getName().toString());
+            km5.setText(String.valueOf(MainActivity2.person[4].getKm()));
+            score5.setText(String.valueOf(MainActivity2.person[4].getScore()));
+        }
+        if(MainActivity2.index >= 6){
+            name6.setText(MainActivity2.person[5].getName().toString());
+            km6.setText(String.valueOf(MainActivity2.person[5].getKm()));
+            score6.setText(String.valueOf(MainActivity2.person[5].getScore()));
+        }
+        if(MainActivity2.index >= 7){
+            name7.setText(MainActivity2.person[6].getName().toString());
+            km7.setText(String.valueOf(MainActivity2.person[6].getKm()));
+            score7.setText(String.valueOf(MainActivity2.person[6].getScore()));
+        }
+        if(MainActivity2.index >= 8){
+            name8.setText(MainActivity2.person[7].getName().toString());
+            km8.setText(String.valueOf(MainActivity2.person[7].getKm()));
+            score8.setText(String.valueOf(MainActivity2.person[7].getScore()));
+        }
+        if(MainActivity2.index >= 9){
+            name9.setText(MainActivity2.person[8].getName().toString());
+            km9.setText(String.valueOf(MainActivity2.person[8].getKm()));
+            score9.setText(String.valueOf(MainActivity2.person[8].getScore()));
+        }
+        if(MainActivity2.index >= 10){
+            name10.setText(MainActivity2.person[9].getName().toString());
+            km10.setText(String.valueOf(MainActivity2.person[9].getKm()));
+            score10.setText(String.valueOf(MainActivity2.person[9].getScore()));
+        }
 
     }
 }

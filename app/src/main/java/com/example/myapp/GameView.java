@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.media.MediaPlayer;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.provider.SyncStateContract;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -16,6 +17,7 @@ import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,14 +30,17 @@ public class GameView extends View {
     public static Car car;
     public static Obstacle obs1, obs2;
     public static Coin coin1, coin2;
+    public static Chronometer chronometer;
     ArrayList<Bitmap> arrObs = new ArrayList<>();
     ArrayList<Bitmap> arrCoins = new ArrayList<>();
     ArrayList<Bitmap> arrCoins2 = new ArrayList<>();
-    private Handler handler;
-    private Runnable r;
+    private Handler handler, diamondHand;
+    private Runnable r, diamondR;
     public int lives = 3;
     public int score = 0;
     public long time;
+
+
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -44,9 +49,11 @@ public class GameView extends View {
         initObstacle2();
         initCoin1();
         initCoin2();
+
         PlaySound.SoundPlayer(context,R.raw.music);
         PlaySound.player.start();
         PlaySound.CrashPlayer(context,R.raw.crash);
+
 
 
 
@@ -109,6 +116,7 @@ public class GameView extends View {
         coin1.setArrBms(arrCoins);
     }
 
+
     public void initCoin2(){
 
         coin2 = new Coin();
@@ -130,30 +138,73 @@ public class GameView extends View {
         car.draw(canvas);
         obs1.draw(canvas);
         obs2.draw(canvas);
+        coin1.draw(canvas);
+        coin2.draw(canvas);
+
+
         handler.postDelayed(r, 10);
+
+
+
+
         if ((GameView.obs1.getX() >= GameView.car.getX() && GameView.obs1.getX() <= GameView.car.getX() + GameView.car.getWidth() ||
                 GameView.obs1.getX() + GameView.obs1.width >= GameView.car.getX() && GameView.obs1.getX() + GameView.obs1.width <= GameView.car.getX() + GameView.car.getWidth()) &&
                 (GameView.obs1.getY() >= GameView.car.getY() && GameView.obs1.getY() <= GameView.car.getY() + GameView.car.getHeight() ||
                         GameView.obs1.getY() + GameView.obs1.getHeight() >= GameView.car.getY() && GameView.obs1.getY() + GameView.obs1.getHeight() <= GameView.car.getY() + GameView.car.getHeight())) {
             obs1.setX(Constants.randomX() / 2 + Constants.SCREEN_WIDTH / 2);
             obs1.setY(100 * Constants.SCREEN_HEIGHT / 1920);
-            PlaySound.playerCrash.start();
-            lives = lives - 1;
-            if (lives <= 0) {
-                endGame();
-            } else {
 
-                Toast t = Toast.makeText(getContext(), "Hit! lives you have is: " + lives, Toast.LENGTH_SHORT);
-                t.show();
+            if(MainActivity.bheart1 != null) {
+                MainActivity.explode.setX(car.getX());
+                MainActivity.explode.setY(car.getY()-80);
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
 
-                        t.cancel();
+                        MainActivity.explode.setX(2000);
                     }
-                }, 3000);
+                }, 250);
+            }
+            if(MainActivityNoButton.explode2 != null) {
+                MainActivityNoButton.explode2.setX(car.getX());
+                MainActivityNoButton.explode2.setY(car.getY()-80);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
+                        MainActivityNoButton.explode2.setX(2000);
+                    }
+                }, 250);
+            }
+            PlaySound.playerCrash.start();
+
+
+            lives = lives - 1;
+            if(lives == 2){
+                if(MainActivity.bheart1 != null){
+                    Log.d("TAG", " "+lives);
+                    MainActivity.bheart1.setX(1500);
+                }if(MainActivityNoButton.nheart1 != null)  {
+                    MainActivityNoButton.nheart1.setX(1500);
+                }
+            }
+            if(lives == 1){
+                if(MainActivity.bheart2 != null) {
+                    MainActivity.bheart2.setX(1600);
+                    Log.d("TAG", " "+lives);
+                }if(MainActivityNoButton.nheart2 != null)  {
+                    MainActivityNoButton.nheart2.setX(1600);
+                }
+            }
+            if (lives <= 0) {
+                if(MainActivity.bheart3 != null) {
+                    MainActivity.bheart3.setX(1700);
+                }if(MainActivityNoButton.nheart3 != null)  {
+                    MainActivityNoButton.nheart3.setX(1700);
+                }
+                endGame();
             }
 
         }
@@ -164,23 +215,55 @@ public class GameView extends View {
             obs2.setX(Constants.randomX() / 2 + Constants.SCREEN_WIDTH / 2);
             obs2.setY(100 * Constants.SCREEN_HEIGHT / 1920);
 
-            PlaySound.playerCrash.start();
-            lives = lives - 1;
-            if (lives <= 0) {
-                endGame();
-            } else {
-
-                Toast t = Toast.makeText(getContext(), "Hit! lives you have is: " + lives, Toast.LENGTH_SHORT);
-                t.show();
+            if(MainActivity.explode != null) {
+                MainActivity.explode.setX(car.getX());
+                MainActivity.explode.setY(car.getY()-80);
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
 
-                        t.cancel();
+                        MainActivity.explode.setX(2000);
                     }
-                }, 1500);
+                }, 250);
+            }
+            if(MainActivityNoButton.explode2 != null) {
+                MainActivityNoButton.explode2.setX(car.getX());
+                MainActivityNoButton.explode2.setY(car.getY()-80);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
+                        MainActivityNoButton.explode2.setX(2000);
+                    }
+                }, 250);
+            }
+
+            PlaySound.playerCrash.start();
+            lives = lives - 1;
+            if(lives == 2){
+                if(MainActivity.bheart1 != null){
+                MainActivity.bheart1.setX(1500);
+                }if(MainActivityNoButton.nheart1 != null)  {
+                    MainActivityNoButton.nheart1.setX(1500);
+                }
+            }
+            if(lives == 1){
+                if(MainActivity.bheart2 != null) {
+                    MainActivity.bheart2.setX(1600);
+                    Log.d("TAG", " "+lives);
+                }if(MainActivityNoButton.nheart2 != null)  {
+                    MainActivityNoButton.nheart2.setX(1600);
+                }
+            }
+            if (lives <= 0) {
+                if(MainActivity.bheart3 != null) {
+                    MainActivity.bheart3.setX(1700);
+                }if(MainActivityNoButton.nheart3 != null)  {
+                    MainActivityNoButton.nheart3.setX(1700);
+                }
+                endGame();
             }
 
         }
@@ -193,7 +276,12 @@ public class GameView extends View {
             coin1.setX(Constants.randomX() / 2 + Constants.SCREEN_WIDTH / 2);
             coin1.setY(100 * Constants.SCREEN_HEIGHT / 1920);
             score++;
-            scoreCoin();
+            if(MainActivity.coinCounter1 != null){
+                MainActivity.coinCounter1.setText(String.valueOf(score));
+            }
+            if(MainActivityNoButton.coinCounter2 != null){
+                MainActivityNoButton.coinCounter2.setText(String.valueOf(score));
+            }
 
         }
 
@@ -206,7 +294,12 @@ public class GameView extends View {
             coin2.setX(Constants.randomX() / 2 + Constants.SCREEN_WIDTH / 2);
             coin2.setY(100 * Constants.SCREEN_HEIGHT / 1920);
             score++;
-            scoreCoin();
+            if(MainActivity.coinCounter1 != null){
+                MainActivity.coinCounter1.setText(String.valueOf(score));
+            }
+            if(MainActivityNoButton.coinCounter2 != null){
+                MainActivityNoButton.coinCounter2.setText(String.valueOf(score));
+            }
 
         }
     }
@@ -227,24 +320,14 @@ public class GameView extends View {
                 }
             }, 2000);
 
+            chronometer.stop();
+            time = (SystemClock.elapsedRealtime() - chronometer.getBase()); //in milsec
+            PlaySound.player.release();
+            MainActivity2.person[MainActivity2.index].setKm(this.time);
+            MainActivity2.person[MainActivity2.index].setScore(this.score);
+            MainActivity2.index++;
 
         }
-
-        public void scoreCoin(){
-
-            Toast t = Toast.makeText(getContext(), "Coins: "+score, Toast.LENGTH_SHORT);
-            t.show();
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-
-                    t.cancel();
-                }
-            }, 500);
-
-
-    }
 
 
 }

@@ -20,6 +20,7 @@
         <TableRow
             android:background="@color/colorGreen">
             <TextView
+                android:textAlignment="center"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/col1"
@@ -31,6 +32,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="Score"
                 android:textColor="@color/white"
                 android:padding="10sp"
@@ -40,6 +42,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="Time(milsec)"
                 android:textColor="@color/white"
                 android:padding="10sp"
@@ -63,6 +66,7 @@
             <TextView
                 android:id="@+id/score1"
                 android:layout_width="0dp"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="14sp"
@@ -93,7 +97,7 @@
                 android:id="@+id/score2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
+                android:textAlignment="center"
                 android:padding="10sp"
                 android:textSize="14sp"
                 android:layout_weight="4"
@@ -123,6 +127,7 @@
                 android:id="@+id/score3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:padding="10sp"
                 android:textSize="14sp"
                 android:layout_weight="4"
@@ -154,6 +159,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="14sp"
+                android:textAlignment="center"
                 android:layout_weight="4"
                 android:layout_gravity="center_horizontal"/>
             <TextView
@@ -182,6 +188,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="10sp"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 android:layout_weight="4"
                 android:layout_gravity="center_horizontal"/>
@@ -212,6 +219,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="14sp"
+                android:textAlignment="center"
                 android:layout_weight="4"
                 android:layout_gravity="center_horizontal"/>
             <TextView
@@ -242,6 +250,7 @@
                 android:padding="10sp"
                 android:textSize="14sp"
                 android:layout_weight="4"
+                android:textAlignment="center"
                 android:layout_gravity="center_horizontal"/>
             <TextView
                 android:id="@+id/km7"
@@ -270,6 +279,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="14sp"
+                android:textAlignment="center"
                 android:layout_weight="4"
                 android:layout_gravity="center_horizontal"/>
             <TextView
@@ -299,6 +309,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="14sp"
+                android:textAlignment="center"
                 android:layout_weight="4"
                 android:layout_gravity="center_horizontal"/>
             <TextView
@@ -328,6 +339,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="14sp"
+                android:textAlignment="center"
                 android:layout_weight="4"
                 android:layout_gravity="center_horizontal"/>
             <TextView
@@ -345,13 +357,13 @@
     </TableLayout>
 
     <TextView
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="10dp"
         android:id="@+id/BestScoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Best Score"
-        android:textSize="70dp" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:text="Score Table"
+        android:textSize="60dp" />
 
 
 

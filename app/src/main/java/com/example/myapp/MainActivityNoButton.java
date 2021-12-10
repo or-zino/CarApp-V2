@@ -6,12 +6,17 @@ import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import android.widget.Chronometer;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivityNoButton extends AppCompatActivity {
 
     private Accelerometer accelerometer;
     private Gyroscope gyroscope;
-    public static Chronometer chronometer2;
+    public static ImageView nheart1, nheart2, nheart3;
+    public static TextView coinCounter2;
+    public static ImageView explode2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +27,14 @@ public class MainActivityNoButton extends AppCompatActivity {
         Constants.SCREEN_WIDTH = dm.widthPixels;
         Constants.SCREEN_HEIGHT = dm.heightPixels;
         setContentView(R.layout.activity_main_no_button);
-
-        chronometer2 = findViewById(R.id.chronometer2);
-        chronometer2.start();
+        GameView.chronometer = findViewById(R.id.chronometer2);
+        GameView.chronometer.start();
+        nheart1 = (ImageView) findViewById(R.id.nheart1);
+        nheart2 = (ImageView) findViewById(R.id.nheart2);
+        nheart3 = (ImageView) findViewById(R.id.nheart3);
+        coinCounter2 = (TextView) findViewById(R.id.coinCounter2);
+        explode2 = (ImageView) findViewById(R.id.boom2);
+        explode2.setX(2000);
 
 
         accelerometer = new Accelerometer(this);
@@ -62,7 +72,21 @@ public class MainActivityNoButton extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        accelerometer.register();
+        gyroscope.unregister();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        accelerometer.unregister();
+        gyroscope.unregister();
     }
 }

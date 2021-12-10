@@ -10,8 +10,11 @@
         <entry key="..\:/Users/kqrh84/AndroidStudioProjects/MyApp/app/src/main/res/drawable/roundedbutton.xml" value="0.5453703703703704" />
         <entry key="..\:/Users/kqrh84/AndroidStudioProjects/MyApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/mainbutton.xml" value="0.16944444444444445" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26376146788990823" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.23369565217391305" />
+        <entry key="app/src/main/res/layout/activity_main_no_button.xml" value="0.19067028985507245" />
+        <entry key="app/src/main/res/layout/activity_scoretable.xml" value="0.19067028985507245" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.13425925925925927" />
       </map>
     </option>
   </component>
